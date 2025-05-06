@@ -1,67 +1,67 @@
 # USC8 AI Workshop
 
-Questa repository contiene il materiale didattico (notebook Jupyter) preparato per il workshop sull'Intelligenza Artificiale organizzato da USC8. I notebook coprono diverse applicazioni di Machine Learning e Deep Learning in ambito astronomico.
+This repository contains the educational material (Jupyter notebooks) prepared for the Artificial Intelligence workshop organized by USC8. The notebooks cover various applications of Machine Learning and Deep Learning in astronomy.
 
-## Contenuti
+## Contents
 
-La repository include i seguenti notebook principali:
-
-*   **`redshift_regression.ipynb`**:
-    *   **Obiettivo**: Prevedere il redshift fotometrico (`z_phot`) di oggetti astronomici.
-    *   **Dataset**: Utilizza dati tabellari (magnitudini, errori, raggi, ecc.) provenienti da una query SDSS (Sloan Digital Sky Survey), caricati da un file FITS (`catania_cavuoti.fit`).
-    *   **Tecniche**: Esplora diversi algoritmi di regressione da Scikit-learn (Random Forest, K-Nearest Neighbors, Multi-Layer Perceptron). Include pre-processing dei dati (scaling), feature importance analysis (con Random Forest), e ottimizzazione degli iperparametri (GridSearch).
-    *   **Librerie Principali**: `scikit-learn`, `pandas`, `numpy`, `astropy`, `matplotlib`, `seaborn`.
+The repository includes the following main notebooks:
 
 *   **`gmnist_classifier_light.ipynb`**:
-    *   **Obiettivo**: Classificare immagini di galassie in base alla loro morfologia (4 classi: smooth_round, smooth_cigar, edge_on_disk, unbarred_spiral).
-    *   **Dataset**: Utilizza il dataset Galaxy MNIST (immagini PNG in 3 bande ottiche *grz* da DECaLS/Galaxy Zoo).
-    *   **Tecniche**: Implementa classificatori CNN (Convolutional Neural Network) usando PyTorch e Torchvision. Mostra come usare un'architettura pre-addestrata (ResNet) e come definire una CNN custom. Include data augmentation, valutazione del modello, visualizzazione delle feature map e delle mappe di attivazione (Grad-CAM).
-    *   **Librerie Principali**: `pytorch`, `torchvision`, `pandas`, `numpy`, `matplotlib`, `PIL`, `opencv-python`, `pytorch-grad-cam`.
+    *   **Objective**: Classify images of galaxies based on their morphology (4 classes: smooth_round, smooth_cigar, edge_on_disk, unbarred_spiral).
+    *   **Dataset**: Uses the Galaxy MNIST dataset (PNG images in 3 optical bands *grz* from DECaLS/Galaxy Zoo).
+    *   **Techniques**: Implements Convolutional Neural Network (CNN) classifiers using PyTorch and Torchvision. Shows how to use a pre-trained architecture (ResNet) and how to define a custom CNN. Includes data augmentation, model evaluation, feature map visualization, and activation map visualization (Grad-CAM).
+    *   **Main Libraries**: `pytorch`, `torchvision`, `pandas`, `numpy`, `matplotlib`, `PIL`, `opencv-python`, `pytorch-grad-cam`.
 
-*   **`plasticc_classifier.ipynb`**:
-    *   **Obiettivo**: Classificare curve di luce (serie temporali) di transienti astronomici (15 classi).
-    *   **Dataset**: Utilizza il dataset PLAsTiCC (Photometric LSST Astronomical Time Series Classification Challenge), con dati simulati simili a quelli di LSST. I dati sono in formato CSV (metadata e lightcurves) scaricati da Zenodo.
-    *   **Tecniche**: Costruisce un classificatore basato su RNN (Recurrent Neural Network, specificamente GRU) usando PyTorch. Include la definizione di un `Dataset` custom, gestione di sequenze di lunghezza variabile (padding), data augmentation specifica per time-series, e l'implementazione di una metrica di loss custom (weighted multi-class log-loss) adatta alla challenge PLAsTiCC.
-    *   **Librerie Principali**: `pytorch`, `pandas`, `numpy`, `scikit-learn` (per split), `matplotlib`, `tqdm`.
+*   **`redshift_regression.ipynb`**:
+    *   **Objective**: Predict the photometric redshift (`z_phot`) of astronomical objects.
+    *   **Dataset**: Uses tabular data (magnitudes, errors, radii, etc.) from an SDSS (Sloan Digital Sky Survey) query, loaded from a FITS file (`catania_cavuoti.fit`).
+    *   **Techniques**: Explores different regression algorithms from Scikit-learn (Random Forest, K-Nearest Neighbors, Multi-Layer Perceptron). Includes data pre-processing (scaling), feature importance analysis (with Random Forest), and hyperparameter optimization (GridSearch).
+    *   **Main Libraries**: `scikit-learn`, `pandas`, `numpy`, `astropy`, `matplotlib`, `seaborn`.
 
-Altri file:
-*   **`.gitignore`**: File standard che indica a Git quali file o cartelle ignorare.
-*   **`LICENSE`**: Il file che specifica la licenza sotto cui è distribuito il materiale (presumibilmente MIT License).
+*   **`time_series_classification.ipynb`**:
+    *   **Objective**: Classify *synthetic* astronomical time series (light curves) into 7 categories (Cepheid, RR Lyrae, Eclipsing Binary, Delta Scuti, LPV, Flare Star, Rotational Modulation).
+    *   **Dataset**: The data is generated *within* the notebook itself using functions that simulate different classes of stellar variability.
+    *   **Techniques**: Uses Recurrent Neural Networks (RNNs, specifically LSTM and GRU) with PyTorch. Focuses on building and improving RNN architectures (introducing multiple layers, bidirectionality, dropout) starting from basic models.
+    *   **Main Libraries**: `pytorch`, `numpy`, `matplotlib`, `scikit-learn` (for splitting), `torchmetrics`, `seaborn`.
 
-## Come Eseguire i Notebook in Google Colab (Metodo Consigliato)
+Other files:
+*   **`.gitignore`**: Standard file indicating which files or folders Git should ignore.
+*   **`LICENSE`**: File specifying the license under which the material is distributed (MIT License).
 
-Il modo più semplice per interagire con questi notebook è utilizzare Google Colaboratory (Colab), un servizio gratuito che permette di eseguire codice Python direttamente nel browser, senza bisogno di installazioni locali e fornendo accesso a risorse computazionali (come GPU gratuite, utili specialmente per i notebook basati su PyTorch).
+## How to Run Notebooks in Google Colab (Recommended Method)
 
-**Opzione 1: Link Diretti (Badge "Open in Colab")**
+The easiest way to interact with these notebooks is using Google Colaboratory (Colab), a free service that allows you to run Python code directly in your browser, without needing local installations and providing access to computational resources (like free GPUs, especially useful for the PyTorch-based notebooks).
 
-Clicca sui badge qui sotto per aprire ciascun notebook direttamente in Google Colab:
+**Option 1: Direct Links ("Open in Colab" Badges)**
+
+Click the badges below to open each notebook directly in Google Colab:
 
 *   **Redshift Regression:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/simoneriggi/usc8-ai-workshop/blob/main/redshift_regression.ipynb)
 *   **Galaxy MNIST Classifier:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/simoneriggi/usc8-ai-workshop/blob/main/gmnist_classifier_light.ipynb)
-*   **PLAsTiCC Classifier:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/simoneriggi/usc8-ai-workshop/blob/main/plasticc_classifier.ipynb)
+*   **Time Series Classification:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/simoneriggi/usc8-ai-workshop/blob/main/time_series_classification.ipynb)
 
-**Opzione 2: Apertura Manuale da Colab**
+**Option 2: Manual Opening from Colab**
 
-1.  Apri [Google Colab](https://colab.research.google.com/).
-2.  Vai su `File` -> `Apri notebook`.
-3.  Seleziona la scheda `GitHub`.
-4.  Incolla l'URL di questa repository: `https://github.com/simoneriggi/usc8-ai-workshop`
-5.  Premi Invio o clicca sull'icona di ricerca.
-6.  Dovrebbe apparire la lista dei file. Clicca sul notebook `.ipynb` che desideri aprire.
+1.  Open [Google Colab](https://colab.research.google.com/).
+2.  Go to `File` -> `Open notebook`.
+3.  Select the `GitHub` tab.
+4.  Paste the URL of this repository: `https://github.com/simoneriggi/usc8-ai-workshop`
+5.  Press Enter or click the search icon.
+6.  The list of files should appear. Click on the `.ipynb` notebook you wish to open.
 
-Una volta aperto in Colab, puoi eseguire le celle di codice una ad una premendo `Shift + Invio` o usando i pulsanti nell'interfaccia. I notebook contengono celle per installare le librerie necessarie (`%pip install ...`), quindi dovrebbero funzionare direttamente in Colab.
+Once opened in Colab, you can execute the code cells one by one by pressing `Shift + Enter` or using the buttons in the interface. The notebooks contain cells to install necessary libraries (`%pip install ...` or `!pip install ...`), so they should work directly in Colab.
 
-Ricorda che l'ambiente Colab è temporaneo; se fai modifiche che vuoi salvare, assicurati di farlo (`File -> Salva una copia su Drive` o `File -> Scarica .ipynb`).
+Remember that the Colab environment is temporary; if you make changes you want to save, make sure to do so (`File -> Save a copy in Drive` or `File -> Download .ipynb`).
 
-## Prerequisiti
+## Prerequisites
 
-*   Per usare Google Colab: Un account Google.
-*   Una conoscenza di base di Python e dei concetti fondamentali di Machine Learning è utile per seguire i notebook. Le librerie specifiche vengono installate direttamente all'interno dei notebook stessi.
+*   To use Google Colab: A Google account.
+*   A basic understanding of Python and fundamental Machine Learning concepts is helpful for following the notebooks. Specific libraries are installed directly within the notebooks themselves.
 
-## Licenza
+## License
 
-Il contenuto di questa repository è rilasciato sotto la licenza MIT. Per maggiori dettagli, consulta il file `LICENSE`.
+The content of this repository is released under the MIT License. For more details, see the `LICENSE` file.
 
 ---
 
-Spero questo workshop sia utile e interessante!
+We hope this workshop is useful and interesting!
